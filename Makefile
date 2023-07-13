@@ -34,6 +34,6 @@ help:
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
-	@sh scripts/link_repos.sh ${FUNWAVE_REPO} ${FUNWAVE_EPATH} ${FUNWAVE_PATH}
-	@sh scripts/link_repos.sh ${FUNTOOL_REPO} ${FUNTOOL_EPATH} ${FUNTOOL_PATH}
+	@bash scripts/link_repos.sh ${FUNWAVE_REPO} ${FUNWAVE_EPATH} ${FUNWAVE_PATH}
+	@bash scripts/link_repos.sh ${FUNTOOL_REPO} ${FUNTOOL_EPATH} ${FUNTOOL_PATH}
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
