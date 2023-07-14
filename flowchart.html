@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ARCHITECTURE &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MODEL DOWNLOAD AND SETUP" href="setup.html" />
+    <link rel="prev" title="Bubble and Foam Module" href="bubble_foam_module.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="setup.html" title="MODEL DOWNLOAD AND SETUP"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="bubble_foam_module.html" title="Bubble and Foam Module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>ARCHITECTURE</strong></a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>ARCHITECTURE</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#parallelization">Parallelization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flow-chart">Flow chart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nesting-structure">Nesting structure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="architecture">
+<h1><strong>ARCHITECTURE</strong><a class="headerlink" href="#architecture" title="Permalink to this heading">¶</a></h1>
+<section id="parallelization">
+<h2>Parallelization<a class="headerlink" href="#parallelization" title="Permalink to this heading">¶</a></h2>
+<p>In parallelizing the computational model, we used a domain decomposition technique to subdivide the problem into multiple regions and assign each subdomain to a separate processor core. Each subdomain region contains an overlapping area of ghost cells,  three-row deep, as required by the fourth order MUSCL-TVD scheme. The Message Passing Interface (MPI) with non-blocking communication is used to exchange  data in the overlapping region between neighboring processors.  Velocity components are obtained by solving tridiagonal matrices using the parallel pipelining tridiagonal solver described in <a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/1263540">Naik et al. (1993)</a>.</p>
+</section>
+<section id="flow-chart">
+<h2>Flow chart<a class="headerlink" href="#flow-chart" title="Permalink to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/flow_chart.jpg"><img alt="alternate text" src="_images/flow_chart.jpg" style="width: 400px; height: 550px;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/sediment_chart_dark.png"><img alt="alternate text" src="_images/sediment_chart_dark.png" style="width: 325px; height: 225px;" /></a>
+</figure>
+</section>
+<section id="nesting-structure">
+<h2>Nesting structure<a class="headerlink" href="#nesting-structure" title="Permalink to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/nesting_grid.png"><img alt="alternate text" src="_images/nesting_grid.png" style="width: 400px; height: 225px;" /></a>
+</figure>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="setup.html" title="MODEL DOWNLOAD AND SETUP"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="bubble_foam_module.html" title="Bubble and Foam Module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>ARCHITECTURE</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

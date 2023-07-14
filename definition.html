@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>DEFINITIONS OF PARAMETERS &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Parameters for Central Module" href="central_para.html" />
+    <link rel="prev" title="Video Tutorials" href="tutorials.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="central_para.html" title="Parameters for Central Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tutorials.html" title="Video Tutorials"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>DEFINITIONS OF PARAMETERS</strong></a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#input-txt">INPUT.TXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definitions">Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simulation-checklist">Simulation Checklist</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="definitions-of-parameters">
+<span id="section-definitions"></span><h1><strong>DEFINITIONS OF PARAMETERS</strong><a class="headerlink" href="#definitions-of-parameters" title="Permalink to this heading">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Examples of model setup are provided in the downloaded package (simpe example folder). If you are a beginner, we strongly suggest trying those examples first and find an example similar to your case. Introduction to those examples can be found at <a class="reference external" href="examples.html">Simple tests</a>.</p>
+</div>
+<p>In this section, we will describe the structure of the “input.txt” file and the input parameters required for each module available in FUNWAVE. Each example in the <code class="code docutils literal notranslate"><span class="pre">/simple_cases/</span></code> folder of the downloaded package has a version of the “input.txt” file that is unique to that example. You can refer to the “input.txt” file for each example when reviewing the definitions of parameters described here.</p>
+<p>In addition, you will need to create the unique executable needed to run the specific example. This executable is created by the “Makefile”. In some cases, multiple examples can be run from the same executable so long as the appropriate flags pertaining to the example are active in the “Makefile”. To learn more about makefiles and running FUNWAVE, review the <a class="reference internal" href="setup.html#section-download"><span class="std std-ref">Model Download and Setup</span></a> page.</p>
+<hr class="docutils" />
+<section id="input-txt">
+<h2>INPUT.TXT<a class="headerlink" href="#input-txt" title="Permalink to this heading">¶</a></h2>
+<p>An example “input.txt” file is presented below. This file is from the <a class="reference internal" href="slope.html#section-1d-slope"><span class="std std-ref">Waves on 1D Slope</span></a> example, located in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/surface_wave_1d/input_files</span></code>. The input file is divided into sections with dashes, where lines with “!” are comments. Brief descriptions of the parameters are listed in each section. Most model parameters are specified in “input.txt”, except the parameters specific to a particular module. There parameters will be added to “input.txt”. Take a moment to familiarize yourself with the basic structure of the FUNWAVE input file. A comprehensive description of all parameters is located at the <a class="reference internal" href="#subsection-defs"><span class="std std-ref">bottom</span></a> of this page.</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! INPUT FILE FOR FUNWAVE_TVD
+! NOTE: all input parameter are capital sensitive
+! --------------------TITLE-------------------------------------
+! title only for log file
+ TITLE = regular_1D
+
+! -------------------PARALLEL INFO-----------------------------
+!
+!    PX,PY - processor numbers in X and Y
+!    NOTE: make sure consistency with mpirun -np n (px*py)
+!
+ PX = 2
+ PY = 1
+
+! --------------------DEPTH-------------------------------------
+! Depth types, DEPTH_TYPE=DATA: from depth file
+!              DEPTH_TYPE=FLAT: idealized flat, need depth_flat
+!              DEPTH_TYPE=SLOPE: idealized slope,
+!                                 need slope,SLP starting point, Xslp
+!                                 and depth_flat
+ DEPTH_TYPE = SLOPE
+! if depth is flat and slope, specify flat_depth
+ DEPTH_FLAT = 10.0
+! if depth is slope, specify slope and starting point
+ SLP = 0.05
+ Xslp = 800.0
+
+! -------------------PRINT---------------------------------
+! PRINT*,
+! result folder
+ RESULT_FOLDER = output/
+
+! ------------------DIMENSION-----------------------------
+! global grid dimension
+ Mglob = 1024
+ Nglob = 3
+
+! ----------------- TIME----------------------------------
+! time: total computational time/ plot time / screen interval
+! all in seconds
+ TOTAL_TIME = 200.0
+ PLOT_INTV = 10.0
+ PLOT_INTV_STATION = 0.5
+ SCREEN_INTV = 10.0
+ PLOT_START_TIME = 100.0
+
+! -----------------GRID----------------------------------
+! if use spherical grid, in decimal degrees
+ DX = 1.0
+ DY = 1.0
+
+! ----------------WAVEMAKER------------------------------
+!  wave maker
+! LEF_SOL- left boundary solitary, need AMP,DEP, LAGTIME
+! INI_SOL- initial solitary wave, WKN B solution,
+! need AMP, DEP, XWAVEMAKER
+! INI_REC - rectangular hump, need to specify Xc,Yc and WID
+! WK_REG - Wei and Kirby 1999 internal wave maker, Xc_WK,Tperiod
+!          AMP_WK,DEP_WK,Theta_WK, Time_ramp (factor of period)
+! WK_IRR - Wei and Kirby 1999 TMA spectrum wavemaker, Xc_WK,
+!          DEP_WK,Time_ramp, Delta_WK, FreqPeak, FreqMin,FreqMax,
+!          Hmo,GammaTMA,ThetaPeak
+! WK_TIME_SERIES - fft time series to get each wave component
+!                 and then use Wei and Kirby 1999
+!          need input WaveCompFile (including 3 columns: per,amp,pha)
+!          NumWaveComp,PeakPeriod,DEP_WK,Xc_WK,Ywidth_WK
+ WAVEMAKER = WK_REG
+ DEP_WK = 10.0
+ Xc_WK = 250.0
+ Yc_WK = 0.0
+ Tperiod = 8.0
+ AMP_WK = 0.5
+ Theta_WK = 0.0
+ Delta_WK = 3.0   ! the default is 0.5, set a large number for nonlinear waves
+
+! ---------------- PERIODIC BOUNDARY CONDITION ---------
+! South-North periodic boundary condition
+!
+ PERIODIC = F
+
+! ---------------- SPONGE LAYER ------------------------
+! need to specify widths of four boundaries and parameters if needed
+! set width=0.0 if no sponge
+ DIFFUSION_SPONGE = F
+ FRICTION_SPONGE = T
+ DIRECT_SPONGE = T
+ Csp = 0.0
+ CDsponge = 1.0
+ Sponge_west_width =  180.0
+ Sponge_east_width =  0.0
+ Sponge_south_width = 0.0
+ Sponge_north_width = 0.0
+
+! ----------------PHYSICS------------------------------
+! parameters to control type of equations
+! dispersion: all dispersive terms
+! gamma1=1.0,gamma2=1.0: defalt: Fully nonlinear equations
+!----------------Friction-----------------------------
+ Cd = 0.0
+
+! ----------------NUMERICS----------------------------
+! time scheme: runge_kutta for all types of equations
+!              predictor-corrector for NSWE
+! space scheme: second-order
+!               fourth-order
+! construction: HLLC
+! cfl condition: CFL
+! froude number cap: FroudeCap
+ ! HIGH_ORDER = THIRD
+! CFL
+ CFL = 0.5
+! Froude Number Cap (to avoid jumping drop, set 1.5)
+ FroudeCap = 3.0
+
+! --------------WET-DRY-------------------------------
+! MinDepth for wetting-drying
+ MinDepth=0.01
+
+! -------------- BREAKING ----------------------------
+ VISCOSITY_BREAKING = T
+ Cbrk1 = 0.65
+ Cbrk2 = 0.35
+
+! ----------------- WAVE AVERAGE ------------------------
+! if use smagorinsky mixing, have to set -DMIXING in Makefile
+! and set averaging time interval, T_INTV_mean, default: 20s
+ T_INTV_mean = 240.0
+ STEADY_TIME=480.0
+
+! -----------------OUTPUT-----------------------------
+! stations
+! if NumberStations&gt;0, need input i,j in STATION_FILE
+ NumberStations = 0
+ STATIONS_FILE = gauges.txt
+! output variables, T=.TRUE, F = .FALSE.
+ DEPTH_OUT = T
+ ETA = T
+ MASK = T
+ WaveHeight = T
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="definitions">
+<span id="subsection-defs"></span><h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this heading">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All parameter names are case sensitive.</p>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="central_para.html">Parameters for Central Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="title.html">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parallelization.html">Parallelization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html">Grid and Computational Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physics.html">Physics (dispersion, breaking, friction)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numerics.html">Numerical Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavemaker_para.html">Wave-maker specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="periodic.html">Periodic Boundary Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tide_surge.html">Tide and Surge Boundary Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foam_para.html">Parameters for Bubble and Foam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html">Wave Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sponge.html">Sponge Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="breakwater.html">Breakwater and Obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bathymetry_correction.html">Bathymetry Correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hotstart.html">Hot Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radiation_stress.html">Calculation of radiation stresses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="post.html">Post Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spherical.html">Spherical Coordinates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spherical.html#input-for-spherical-mode">Input for Spherical mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="shipwakes_para.html">Shipwakes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="shipwakes_para.html#ship-wake-model-setup">Ship-wake Model Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shipwakes_para.html#deep-draft-vessels">Deep Draft Vessels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sediment_para.html">Sediment Transport and Morphological Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meteo_tsu.html">Wind and Pressure Field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracer_setup.html">Lagrangian Tracer Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slide.html">Landslide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subgrid_para.html">Subgrid Parameters</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+</section>
+<section id="simulation-checklist">
+<span id="subsection-checklist"></span><h2>Simulation Checklist<a class="headerlink" href="#simulation-checklist" title="Permalink to this heading">¶</a></h2>
+<p>After the FUNWAVE-TVD model has been downloaded and compiled on either your local machine or remote computing environment (e.g., HPC or AWS Cloud), and you’ve familiarized yourself with the <a class="reference internal" href="examples.html#section-examples"><span class="std std-ref">simple cases</span></a> in the model repository, you’re ready to begin running numerical wave simulations for your application. If you haven’t yet downloaded and compiled the model, follow the instructions on the <a class="reference internal" href="setup.html#section-download"><span class="std std-ref">Model Download and Setup</span></a> page.</p>
+<p>Below is a simple checklist to review before hitting “go” on a simulation. This checklist was designed to reduce the probability of experiencing an error when initiating a new simulation; however, it is not comprehensive of all possible input parameters and input file conditions for all applications.</p>
+<ol class="arabic simple">
+<li><p>Input wave conditions are within the <a class="reference internal" href="info_structures.html#info-structures"><span class="std std-ref">valid range</span></a> of the model.</p></li>
+<li><p>For stability, the ratio of DX and water depth is greater than 1/15, <a class="reference internal" href="info_structures.html#info-structures"><span class="std std-ref">DX/h &gt; 1/15</span></a>.</p></li>
+<li><p>The number of processors to request on the HPC or local machine matches the product of PX and PY from “input.txt”. This number should be a divisor of the number of available processors or cores per compute node (e.g., if 1 node supports 44 processors, -np must be 1, 2, 4, 11, 22, or 44).</p></li>
+<li><p>Cross-reference the name and path of the FUNWAVE executable file to be used for the simulation in the run command or PBS script (if submitting a job on an HPC environment).</p></li>
+<li><p>Cross-reference input file names (input.txt, depth.txt, gauges.txt or stations.txt, friction.txt, etc.) across the working directory, “input.txt”, and the PBS script (if submitting a job on an HPC environment).</p></li>
+<li><p>Global input filetypes (e.g., depth.txt and friction.txt) are the same size as the domain (Mglob x Nglob) starting from the south-west corner. If generating files in Python, the bathy array will have Nglob rows and Mglob columns.</p></li>
+<li><p>If using a depth type of FLAT or SLOPE, the DEPTH_FLAT = DEP_WK at the wavemaker. If using a depth type of DATA, ensure that the DEP_WK at XC_WK matches the depth at that location in the “bathy.txt”. For stability, it is best to artificially smooth the bathymetry to a constant depth at and around the wavemaker.</p></li>
+<li><p>If transferring files from a Windows to a Linux machine (in an HPC environment, for example), run <code class="code docutils literal notranslate"><span class="pre">dos2unix</span> <span class="pre">[filename]</span></code> on input files to eliminate any possible Windows return characters (^M) at the end of a line.</p></li>
+</ol>
+<p>If you have experience with running many FUNWAVE-TVD simulations and have recommendations to add to this simple checklist with respect to the Central, Vessel, Sediment, or Meteo modules, please send an email the FUNWAVE user group with the subject “Checklist Recommendations”. We will consider your recommendations and include them on the Wiki as appropriate. We appreciate your support and engagement as the modeling community and the model itself continues to evolve and grow.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="central_para.html" title="Parameters for Central Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tutorials.html" title="Video Tutorials"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>DEFINITIONS OF PARAMETERS</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

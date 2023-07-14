@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Single Vessel in a Circular Basin &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Interaction between wind waves and ship-wakes in an inlet system" href="vessel_inlet.html" />
+    <link rel="prev" title="Two vessels with different speeds" href="vessel_flat_bottom.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="vessel_inlet.html" title="Interaction between wind waves and ship-wakes in an inlet system"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="vessel_flat_bottom.html" title="Two vessels with different speeds"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="vessel.html" accesskey="U">Ship-wakes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Single Vessel in a Circular Basin</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="examples.html#simple-tests-beginners-should-start-from-here">Simple tests <strong>(beginners should start from here)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#benchmarks">Benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#recent-usace-applications">Recent USACE Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="single-vessel-in-a-circular-basin">
+<span id="section-vessel-circular"></span><h1>Single Vessel in a Circular Basin<a class="headerlink" href="#single-vessel-in-a-circular-basin" title="Permalink to this heading">¶</a></h1>
+<p>In this example, you will have a single vessel in a circular basin. The input file for this example is located <code class="code docutils literal notranslate"><span class="pre">/simple_cases/vessel_island_beach/</span></code>.</p>
+<p><strong>Computational domain</strong></p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/depth_vessel.jpg"><img alt="alternate text" src="_images/depth_vessel.jpg" style="width: 400px; height: 350px;" /></a>
+</figure>
+<p><strong>Setup in input.txt:</strong></p>
+<p>See an example of a complete “input.txt” <a class="reference internal" href="definition.html#section-definitions"><span class="std std-ref">here</span></a>. <strong>Remember that all parameters are case sensitive</strong>.</p>
+<blockquote>
+<div><p>Set a descriptive title for your simulation:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----TITLE-----
+ TITLE = vessel_circular
+</pre></div>
+</div>
+<p>If running in parallel, set the number of processors in X and Y:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PARALLEL INFO----
+ PX = 2
+ PY = 2
+</pre></div>
+</div>
+<p>Set the bathymetry to the depth file provided:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----DEPTH-----
+ DEPTH_TYPE = DATA
+ DEPTH_FILE = depth.txt
+</pre></div>
+</div>
+<p>(refer to <a class="reference internal" href="grid.html#definition-grid"><span class="std std-ref">Grid and Computational Time</span></a> for parameter definitions)</p>
+<p>Send the results to a folder named “output”:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PRINT-----
+ RESULT_FOLDER = output/
+</pre></div>
+</div>
+<p>Set the dimensions of the domain to 500 x 500 (x and y, respectively):</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----DIMENSION-----
+ Mglob = 500
+ Nglob = 500
+</pre></div>
+</div>
+<p>Set the computational time, plot time, and screen interval to 300.0 s, 1.0 s, and 1.0 s, respectively:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----TIME-----
+ TOTAL_TIME = 300.0
+ PLOT_INTV = 1.0
+ SCREEN_INTV = 1.0
+</pre></div>
+</div>
+<p>Set the grid spacing in x and y to 2.0 m:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----GRID-----
+ DX = 2.0
+ DY = 2.0
+</pre></div>
+</div>
+<p>Add a single vessel with the following specifications:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----SHIP WAKES-----
+ VESSEL_FOLDER = ./
+ NumVessel = 1
+</pre></div>
+</div>
+<p>In <code class="code docutils literal notranslate"><span class="pre">vessel_00001</span></code>, specify:</p>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>Title: Vessel # 1
+Pressure, 1
+Length(m), Width(m), Alpha1(m), Alpha2(m), Beta(m), P(unit)
+20.0  10.0, 0.5, 0.5, 0.5, 1.0
+0.0000000e+00,   5.6000000e+02,   5.0000000e+02
+<span class="gh">1.0000000e+00,   5.6374897e+02,   5.0255132e+02</span>
+<span class="gh">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>(refer to <a class="reference internal" href="shipwakes.html#theory-shipwakes"><span class="std std-ref">Ship-wake Module</span></a> and <a class="reference internal" href="shipwakes_para.html#section-shipwakes-setup"><span class="std std-ref">Shipwakes</span></a>)</p>
+<p>Output the water elevation:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----OUTPUT-----
+ ETA = T
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Postprocessing</strong></p>
+<p>For postprocessing examples, MATLAB and Python scripts are located in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/vessel_island_beach/postprocessing</span></code>. An example model result is shown below:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/shipwake_150.jpg"><img alt="alternate text" src="_images/shipwake_150.jpg" style="width: 300px; height: 300px;" /></a>
+</figure>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="vessel_inlet.html" title="Interaction between wind waves and ship-wakes in an inlet system"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="vessel_flat_bottom.html" title="Two vessels with different speeds"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="vessel.html" >Ship-wakes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Single Vessel in a Circular Basin</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>30 deg irregular waves, a submerged breakwater with partial reflection &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="IG Wave Generation" href="ig_wave.html" />
+    <link rel="prev" title="30 deg irregular waves, a submerged/emerged breakwater" href="inlet_shoal_irregular_wave_30deg_brkwtr.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ig_wave.html" title="IG Wave Generation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="inlet_shoal_irregular_wave_30deg_brkwtr.html" title="30 deg irregular waves, a submerged/emerged breakwater"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="inlet_shoal.html" accesskey="U">Inlet + Sandbar + Beach</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">30 deg irregular waves, a submerged breakwater with partial reflection</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="examples.html#simple-tests-beginners-should-start-from-here">Simple tests <strong>(beginners should start from here)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#benchmarks">Benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#recent-usace-applications">Recent USACE Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="deg-irregular-waves-a-submerged-breakwater-with-partial-reflection">
+<span id="section-inlet-irr30-brk-ref"></span><h1>30 deg irregular waves, a submerged breakwater with partial reflection<a class="headerlink" href="#deg-irregular-waves-a-submerged-breakwater-with-partial-reflection" title="Permalink to this heading">¶</a></h1>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/eta_inlet_shoal_irr_30deg_brk_abs.jpg"><img alt="alternate text" src="_images/eta_inlet_shoal_irr_30deg_brk_abs.jpg" style="width: 500px; height: 300px;" /></a>
+</figure>
+<p>Continue to build on <a class="reference internal" href="inlet_shoal_irregular_wave_30deg_brkwtr.html#section-inlet-irr30-brk"><span class="std std-ref">30 deg irregular waves, a submerged/emerged breakwater</span></a> by adding a partially reflecting breakwater to the simulation. Refer to <a class="reference internal" href="inlet_shoal_info.html#section-inlet-basics"><span class="std std-ref">Basics for model setup</span></a> for domain setup.</p>
+<blockquote>
+<div><p>Set descriptive title for your simulation:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----TITLE-----
+ TITLE = inlet_irr_30deg_brk_ref
+</pre></div>
+</div>
+<p>Keep the <code class="code docutils literal notranslate"><span class="pre">DEPTH_FILE</span></code> the same as in <a class="reference internal" href="inlet_shoal_irregular_wave_30deg_brkwtr.html#section-inlet-irr30-brk"><span class="std std-ref">30 deg irregular waves, a submerged/emerged breakwater</span></a>, and add a <code class="code docutils literal notranslate"><span class="pre">BREAKWATER_FILE</span></code> to define the partially reflecting breakwater:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----DEPTH-----
+ DEPTH_TYPE = DATA
+ DEPTH_FILE = DEPTH_FILE = dep_shoal_inlet_brk.txt
+
+ BREAKWATER_FILE = brk_shoal_inlet.txt
+</pre></div>
+</div>
+<p>“brk_shoal_inlet.txt” has the same format as the depth file, and the values represent the damping width (like a sponge layer).</p>
+<p>Refer to <a class="reference internal" href="info_partial_breakwater.html#example-partial-breakwater"><span class="std std-ref">Example: add partially reflecting/absorbing breakwater</span></a> for more information.</p>
+</div></blockquote>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ig_wave.html" title="IG Wave Generation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="inlet_shoal_irregular_wave_30deg_brkwtr.html" title="30 deg irregular waves, a submerged/emerged breakwater"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="inlet_shoal.html" >Inlet + Sandbar + Beach</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">30 deg irregular waves, a submerged breakwater with partial reflection</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

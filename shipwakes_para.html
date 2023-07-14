@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Shipwakes &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sediment Transport and Morphological Change" href="sediment_para.html" />
+    <link rel="prev" title="Spherical Coordinates" href="spherical.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="sediment_para.html" title="Sediment Transport and Morphological Change"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="spherical.html" title="Spherical Coordinates"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="definition.html" accesskey="U"><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Shipwakes</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="definition.html#input-txt">INPUT.TXT</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="definition.html#definitions">Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definition.html#simulation-checklist">Simulation Checklist</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="shipwakes">
+<span id="section-shipwakes-setup"></span><h1>Shipwakes<a class="headerlink" href="#shipwakes" title="Permalink to this heading">¶</a></h1>
+<section id="ship-wake-model-setup">
+<h2>Ship-wake Model Setup<a class="headerlink" href="#ship-wake-model-setup" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Specify a folder which contains a number of vessel files, <code class="code docutils literal notranslate"><span class="pre">vessel_00001,</span> <span class="pre">vessel_00002,</span> <span class="pre">...</span></code></p>
+<p><code class="code docutils literal notranslate"><span class="pre">VESSEL_FOLDER</span> <span class="pre">=</span> <span class="pre">./</span></code></p>
+</li>
+<li><p>Specify the number of vessels (e.g., 5)</p>
+<p><code class="code docutils literal notranslate"><span class="pre">NumVessel</span> <span class="pre">=</span> <span class="pre">5</span></code></p>
+</li>
+<li><p>In <code class="code docutils literal notranslate"><span class="pre">vessel_00001</span></code>, for example, provide vessel name, vessel type, vessel length, width, shape parameters, draft and time series of vessel path:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>Title: Vessel # 1  - (name)
+PRESSURE, 1  (pressure type, type I)
+Length(m), Width(m), Alpha1, Alpha2, Beta, P(unit) (comment, vessel parameters)
+20.0  10.0, 0.5, 0.5, 1.0    (vessel parameters)
+0.0000000e+00,   5.6000000e+02,   5.0000000e+02  (time, x, y)
+<span class="gh">1.0000000e+00,   5.6374897e+02,   5.0255132e+02  (...)</span>
+<span class="gh">...</span>
+</pre></div>
+</div>
+<p>In the time series, the first column is time in seconds, the second and the third are x and y in meters, respectively.</p>
+</li>
+</ol>
+<p><strong>The following is an example which includes 5 vessels of different types</strong></p>
+<p>This example can be found in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/vessel_types_compare/</span></code>.</p>
+<p>Figure: Vessel types (from bottom to top): 1) Pressure Type I, 2) Pressure Type I with large <span class="math notranslate nohighlight">\(\alpha\)</span>, 3) Pressure Type II, 4) Slender Type I, 5) Slender Type II.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/5_vessels.jpg"><img alt="alternate text" src="_images/5_vessels.jpg" style="width: 300px; height: 500px;" /></a>
+</figure>
+<p><em>vessel_00001: Pressure Type I</em></p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>Title: Vessel # 1
+PRESSURE, 1
+Length(m), Width(m), Alpha1, Alpha2 Beta, P(m)
+20.0  8.0, 0.0, 0.0, 0.5, 3.0
+Time, X(m), Y(m)  (relative to the origin of the coordinates)
+0.0    50.0  60.0
+100.0 1050.0 60.0
+</pre></div>
+</div>
+<p><em>vessel_00002: Pressure Type I with large</em> <span class="math notranslate nohighlight">\(\alpha\)</span></p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>Title: Vessel # 2
+PRESSURE, 1
+Length(m), Width(m), Alpha1, Alpha2, Beta, P(m)
+20.0  8.0, 0.9, 0.9, 0.5, 3.0
+Time, X(m), Y(m)  (relative to the origin of the coordinates)
+0.0    50.0  120.0
+100.0 1050.0 120.0
+</pre></div>
+</div>
+<p><em>vessel_00003: Pressure Type II</em></p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>Title: Vessel # 3
+PRESSURE, 2
+Length(m), Width(m), a, b, c, P(m)
+10.0  5.0, 16.0, 2.0, 16.0, 2.0
+Time, X(m), Y(m)  (relative to the origin of the coordinates)
+0.0   50.0   180.0
+100.0 1050.0 180.0
+</pre></div>
+</div>
+<p><em>vessel_00004: Slender Type I</em></p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>Title: Vessel # 4
+SLENDER, 1
+Length(m), Width(m), Alpha1, Alpha2, Beta, F(unit)
+10.0  5.0, 0.0, 0.0, 0.9, 12.0
+Time, X(m), Y(m)  (relative to the origin of the coordinates)
+0.0   50.0   240.0
+100.0 1050.0 240.0
+</pre></div>
+</div>
+<p><em>vessel_00005: Slender Type II</em></p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>Title: Vessel # 5
+SLENDER, 2
+Length(m), Width(m), Alpha1, Alpha2, Beta, F(unit)
+10.0  5.0, 0.8, 0.8, 0.9, 40.0
+Time, X(m), Y(m)  (relative to the origin of the coordinates)
+0.0   50.0   300.0
+100.0 1050.0 300.0
+</pre></div>
+</div>
+</section>
+<section id="deep-draft-vessels">
+<h2>Deep Draft Vessels<a class="headerlink" href="#deep-draft-vessels" title="Permalink to this heading">¶</a></h2>
+<p>An instability problem may occur in Boussnesq modeling a large-size vessel with a draft close to  channel depth. We developed three methods in the fully nonlinear Boussinesq model, FUNWAVE-TVD, to suppress high-frequency spikes generated near-field of a vessel. The three methods are the shock-capturing method, friction method, and viscosity method, respectively. Tests show that the combined shock-capturing and friction method is the most effective method to suppress the local high-frequency noises, while it does not affect the far-field solution. A strong test, in which the target draft is larger than the channel depth, showed that there are no high-frequency noises generated in the case of ship squat if the shock-capturing method is used.</p>
+<p><strong>Shock-capturing Method</strong>
+The shock-capturing method is used by switching to SWE solver at the bottom of a vessel. The method is consistent with the shock-capturing-based wave breaking scheme. MASK9 is used to mask the area of the vessel bottom, where SWE is solved.</p>
+<p><strong>Friction Method</strong>
+The Friction Method is one of the dissipation methods used for damping waves as in sponge layers. A large bottom friction is applied locally at the vessel bottom. A proper friction coefficient Cd can be specified by users.</p>
+<p><strong>Viscosity Method</strong>
+The Viscosity Method is also one of the dissipation methods used as in sponge layers. Wave damping rate is usually lower than that in the friction method.</p>
+<p><strong>Model Configuration</strong></p>
+<p>To use one of the three methods or combined methods, the code needs to be recompiled with the flag <strong>-DDEEP_DRAFT_VESSEL</strong> in Makefile.
+The default option (if nothing specified in input.txt) is the combined shock-capturing method and friction method with a friction coefficient of 0.1. This default option and associated parameter were obtained based on the best practice of the tests we have conducted. Users can also specify an option and parameters in input.txt by themselves.</p>
+<blockquote>
+<div><p><em>Setup of shock capturing method</em></p>
+<blockquote>
+<div><p>MaskMethod = T</p>
+</div></blockquote>
+<p><em>Setup of friction method</em></p>
+<blockquote>
+<div><p>FrictionMethod = T</p>
+<p>CdDeepDraft = <em>&lt;floating-point number&gt;</em>, suggested values: 0.1 – 1.0</p>
+</div></blockquote>
+<p><em>Setup of viscosity method</em></p>
+<blockquote>
+<div><p>ViscosityMethod = T</p>
+<p>VisDeepDraft = <em>&lt;floating-point number&gt;</em>, suggested values: 0.1 – 5.0</p>
+</div></blockquote>
+<p><em>Setup of minimum clearance</em></p>
+<blockquote>
+<div><p>CLEARANCE = <em>&lt;floating-point number&gt;</em>, default value: 1.0</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Examples</strong></p>
+<p>The test examples can be found in the github package (master) /simple_cases/vessel_deep_draft/</p>
+<p>The figure below shows the result from the strong test in which the target draft is even larger than channel depth. Although the model configuration is not realistic, it can serve as a strong test for numerical instability. Here, a target draft of 20 m versus a channel depth of 18 m was applied. We used the shock-capturing method in the test. The figure shows a large portion of grid cells are dry (white area). The dry points did not cause any high-frequency noises due to the application of the shock-capturing method.</p>
+<figure class="align-default">
+<img alt="_images/strong_test_20m_1d_2d.jpg" src="_images/strong_test_20m_1d_2d.jpg" />
+</figure>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="sediment_para.html" title="Sediment Transport and Morphological Change"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="spherical.html" title="Spherical Coordinates"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Shipwakes</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>
