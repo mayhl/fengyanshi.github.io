@@ -74,8 +74,6 @@ check_repo() {
 		echo "FATAL: Repo at path '${RPATH}' does not match specified repo!!! Expected '${REPO}', got '${REPO_AT_PATH}'."
 		exit 1
 	fi
-	cd ${CDIR}	
-
 
 	# Checking if repo is up-to-date
 	STATUS=$(git status -uno)
