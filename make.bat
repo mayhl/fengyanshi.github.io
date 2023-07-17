@@ -45,6 +45,7 @@ echo %FUNWAVE_REPO% %FUNWAVE_EPATH% %FUNWAVE_PATH%
 call scripts/link_repos.bat %FUNWAVE_REPO% %FUNWAVE_EPATH% %FUNWAVE_PATH%
 call scripts/link_repos.bat %FUNTOOL_REPO% %FUNTOOL_EPATH% %FUNTOOL_PATH%
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+copy css\* %BUILDDIR%\html\_static\
 goto end
 
 :install_requirements

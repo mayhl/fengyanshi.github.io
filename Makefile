@@ -40,3 +40,4 @@ install_requirements:
 	@bash scripts/link_repos.sh ${FUNWAVE_REPO} ${FUNWAVE_EPATH} ${FUNWAVE_PATH}
 	@bash scripts/link_repos.sh ${FUNTOOL_REPO} ${FUNTOOL_EPATH} ${FUNTOOL_PATH}
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	cp css/* $(BUILDDIR)/html/_static/

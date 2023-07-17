@@ -21,7 +21,6 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -38,7 +37,10 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.todo',
     'sphinx.ext.intersphinx',
-    'logilab_sphinx_themes']
+    'logilab_sphinx_themes',
+    # Additional extensions for Python toolbox documentation 
+    'enum_tools.autoenum',
+    'autodocsumm']
 
 # extensions = ['sphinx.ext.autodoc','sphinx.ext.imgmath','rst2pdf.pdfbuilder']
 # extensions = ['sphinx.ext.autodoc','sphinx.ext.imgmath']
@@ -77,7 +79,8 @@ release = ''
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+# mayhl - Changed langauge to avoid build error 
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -102,7 +105,6 @@ html_show_sourcelink = False
 # set theme path
 html_theme_path = ['_static'] #[logilab_sphinx_themes.get_path()]
 
-
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
@@ -116,15 +118,21 @@ html_theme = 'logilab'
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
+
+# mayhl - Work around for copying logo to build/html folder
+#         NOTE: logilab theme does not seems to copy logo from src path but
+#               expects the logo path to be relative to _static folder 
+
+html_extra_path = ['images/Funwave.svg']
 html_theme_options = {
-        'logo':'../../../images/Funwave.svg',
+        'logo':'../Funwave.svg',
         'logo_url':'https://fengyanshi.github.io/build/html/index.html'
         }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+#html_static_path = ['_static']
 
 # custom options - mjt
 html_compact_lists = True
