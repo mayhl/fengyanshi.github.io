@@ -105,6 +105,7 @@ echo "Checking repo '${REPO}'"
 # Checking if internal path exists and if it does, check if path is a git repo
 if [ -d "${IPATH}" ]; then
 	check_repo ${IPATH} ${REPO}
+	exit 0
 fi
 
 # If internal path does not exist, cloning repo or create soft link to external repo 
