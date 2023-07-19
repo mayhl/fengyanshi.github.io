@@ -50,16 +50,16 @@ set FUNTOOL_PATH=Path/to/FUNWAVE-TVD_Python_Toolbox_repository
 Files in the external repositories may be referenced by using relative paths. For files in the FUNWAVE-TVD repository, use
 
 ```
-../external/FUNWAVE/
+external/FUNWAVE/
 ```
 
 and for the Python Toolbox, use
 
 ```
-../external/FUNTOOL/
+external/FUNTOOL/
 ```
 
-**_NOTE:_** Path syntax is the same for Windows systems
+**_NOTE:_** Repositories must reside in the src directory (the directory containing conf.py) for toc-tree to build correctly with the external repository's Sphinx source files.
 
 ### Building HTML Source files using Sphinx 
 

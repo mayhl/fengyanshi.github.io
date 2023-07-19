@@ -93,15 +93,15 @@ Set a descriptive title for your simulation:
 
 For postprocessing examples, MATLAB scripts are located in :code:`/simple_cases/single_vessel_morphology/postprocessing/`. Example model results are shown below:
 
-.. figure:: ../external/FUNWAVE/simple_cases/single_vessel_cohesive/wakes_cohesive_sed.jpg
+.. figure:: external/FUNWAVE/simple_cases/single_vessel_cohesive/wakes_cohesive_sed.jpg
 
     Shipwakes and sediment concentration at different times.
 
-.. figure:: ../external/FUNWAVE/simple_cases/single_vessel_cohesive/wakes_cohesive_morpho.jpg
+.. figure:: external/FUNWAVE/simple_cases/single_vessel_cohesive/wakes_cohesive_morpho.jpg
 
     Sediment concentration and bed change at t=600 sec.
 
-.. figure:: ../external/FUNWAVE/simple_cases/single_vessel_cohesive/section_mean_wave_morpho.jpg
+.. figure:: external/FUNWAVE/simple_cases/single_vessel_cohesive/section_mean_wave_morpho.jpg
 
     Bed change (upper) and wave envelope (lower) at t=600 sec.
 

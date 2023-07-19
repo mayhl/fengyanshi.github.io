@@ -21,7 +21,7 @@ SOURCEDIR     = src
 BUILDDIR      = build
 
 # Paths to 
-EPATH=external
+EPATH=src/external
 FUNWAVE_EPATH= $(EPATH)/FUNWAVE
 FUNTOOL_EPATH= $(EPATH)/FUNTOOL
 

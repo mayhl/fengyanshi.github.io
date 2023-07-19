@@ -9,7 +9,7 @@ set FUNWAVE_PATH=
 set FUNTOOL_PATH=
 
 REM Paths to 
-set EPATH=external
+set EPATH=src/external
 set FUNWAVE_EPATH=%EPATH%/FUNWAVE
 set FUNTOOL_EPATH=%EPATH%/FUNTOOL
 

@@ -26,12 +26,12 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: fengyanshi/FUNWAVE-TVD
-          path: external/FUNWAVE
+          path: src/external/FUNWAVE
       - name: Clone FUNWAVE-TVD Python Tools 
         uses: actions/checkout@v3
         with:
           repository: mayhl/FUNWAVE-TVD-Python-Tools
-          path: external/FUNTOOL
+          path: src/external/FUNTOOL
           ref: main
       - name: Build Sphinx Docs
         run: |
