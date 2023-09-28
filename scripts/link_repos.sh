@@ -92,8 +92,9 @@ check_repo() {
 			exit 1
 		fi
 
-		exit 0
 	fi
+
+	cd ${CDIR}
 }
 
 
@@ -117,5 +118,6 @@ if [ -z "${EPATH}" ]; then
 else
 	echo "Creating soft link to local repo"
 	check_repo ${EPATH} ${REPO}
-	ln -s ${EPATH} ${IPATH}	
+	echo $(pwd)
+	ln -s ${EPATH} ${IPATH}
 fi

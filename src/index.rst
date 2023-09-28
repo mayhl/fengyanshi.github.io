@@ -154,7 +154,7 @@ Wiki Content
    references
    authors
    addition
-
+   tools/index
 
 Indices and tables
 ******************

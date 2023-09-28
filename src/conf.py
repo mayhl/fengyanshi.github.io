@@ -85,13 +85,16 @@ language = 'en'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['Thumbs.db', '.DS_Store', 'external/FUNTOOL/.venv']
+
+#include_patterns = ['**', 'external/FUNTOOL/docs/src/*']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
+
 
 
 # show source fyshi

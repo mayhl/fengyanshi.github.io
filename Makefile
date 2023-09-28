@@ -1,4 +1,5 @@
-# Minimal makefile for Sphinx documentation
+#
+#Minimal makefile for Sphinx documentation
 #
 
 # Git repo urls
@@ -11,7 +12,7 @@ FUNTOOL_REPO="git@github.com:mayhl/FUNWAVE-TVD-Python-Tools.git"
 #       ensure above urls match urls at paths 
 #       (e.g. 'git remote get-url origin' while in repo path)  
 FUNWAVE_PATH=
-FUNTOOL_PATH=
+FUNTOOL_PATH=#${HOME}/repos/FUNWAVE-TVD-Python-Tools
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
@@ -21,7 +22,7 @@ SOURCEDIR     = src
 BUILDDIR      = build
 
 # Paths to 
-EPATH=src/external
+EPATH=external
 FUNWAVE_EPATH= $(EPATH)/FUNWAVE
 FUNTOOL_EPATH= $(EPATH)/FUNTOOL
 
@@ -39,5 +40,7 @@ install_requirements:
 %: Makefile
 	@bash scripts/link_repos.sh ${FUNWAVE_REPO} ${FUNWAVE_EPATH} ${FUNWAVE_PATH}
 	@bash scripts/link_repos.sh ${FUNTOOL_REPO} ${FUNTOOL_EPATH} ${FUNTOOL_PATH}
+	mkdir -p src/tools
+	cp -r ${FUNTOOL_EPATH}/docs/src/* src/tools
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 	cp css/* $(BUILDDIR)/html/_static/

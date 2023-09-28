@@ -9,9 +9,9 @@ set FUNWAVE_PATH=
 set FUNTOOL_PATH=
 
 REM Paths to 
-set EPATH=src/external
-set FUNWAVE_EPATH=%EPATH%/FUNWAVE
-set FUNTOOL_EPATH=%EPATH%/FUNTOOL
+set EPATH=external
+set FUNWAVE_EPATH=%EPATH%\FUNWAVE
+set FUNTOOL_EPATH=%EPATH%\FUNTOOL
 
 pushd %~dp0
 
@@ -42,10 +42,13 @@ if errorlevel 9009 (
 )
 
 echo %FUNWAVE_REPO% %FUNWAVE_EPATH% %FUNWAVE_PATH%
-call scripts/link_repos.bat %FUNWAVE_REPO% %FUNWAVE_EPATH% %FUNWAVE_PATH%
-call scripts/link_repos.bat %FUNTOOL_REPO% %FUNTOOL_EPATH% %FUNTOOL_PATH%
+call scripts\link_repos.bat %FUNWAVE_REPO% %FUNWAVE_EPATH% %FUNWAVE_PATH%
+call scripts\link_repos.bat %FUNTOOL_REPO% %FUNTOOL_EPATH% %FUNTOOL_PATH%
+if not exist src\tools mkdir src\tools
+xcopy /e /y  %FUNTOOL_EPATH%\docs\src\* src\tools
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
-copy css\* %BUILDDIR%\html\_static\
+xcopy /e /y css\* %BUILDDIR%\html\_static\
+
 goto end
 
 :install_requirements
