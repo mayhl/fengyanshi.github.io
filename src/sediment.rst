@@ -52,9 +52,11 @@ DETAILS
    sed_equation_cohesive
    bedload
    bed_equation
+   sed_hydro_correction
    slope_limiting
    non_erodible
    sed_numerical
+   sed_propeller
 
 APPLICATIONS
 ============
